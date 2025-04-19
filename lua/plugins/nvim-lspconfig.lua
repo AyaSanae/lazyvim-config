@@ -7,10 +7,7 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
-        bacon_ls = {
-          enabled = diagnostics == "bacon-ls",
-        },
-        rust_analyzer = { enabled = false },
+        -- rust_analyzer = { enabled = true },
         clangd = {
           keys = {
             { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },

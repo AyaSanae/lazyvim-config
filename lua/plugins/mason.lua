@@ -8,7 +8,6 @@ return {
         "shfmt",
         "flake8",
         "codelldb",
-        "bacon",
         "clangd",
       },
     },

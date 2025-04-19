@@ -8,6 +8,9 @@ vim.keymap.set("i", "kj", "<Esc>", { silent = true })
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { silent = true })
 vim.keymap.set("t", "kj", "<C-\\><C-n>", { silent = true })
 
+vim.keymap.set("n", "<leader>k", "<cmd>RustLsp hover actions<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cD", "<cmd>RustLsp renderDiagnostic current<CR>", { silent = true })
+
 vim.keymap.set(
   { "v", "n" },
   "gh",
