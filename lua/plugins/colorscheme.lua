@@ -43,17 +43,19 @@ return {
         which_key = true,
       },
     },
-    specs = {
-      {
-        "akinsho/bufferline.nvim",
-        optional = true,
-        opts = function(_, opts)
-          if (vim.g.colors_name or ""):find("catppuccin") then
-            opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
-          end
-        end,
-      },
-    },
+  },
+  {
+    "akinsho/bufferline.nvim",
+    optional = true,
+    opts = function(_, opts)
+      local colorscheme = vim.g.colors_name or ""
+      if colorscheme:find("catppuccin") then
+        local status_ok, bufferline_integration = pcall(require, "catppuccin.groups.integration.bufferline")
+        if status_ok then
+          opts.highlights = bufferline_integration.get()
+        end
+      end
+    end,
   },
   {
     "folke/tokyonight.nvim",
